@@ -10,11 +10,11 @@ function App() {
 
     이유: 
       변환되는 코드
-      React.createElemnet('div', null, React.createElement('h2', null, '01), React.createElement('p',null,'JSX...'))
+      React.createElement('div', null, React.createElement('h2', null, '01), React.createElement('p',null,'JSX...'))
   */
   return (
     <div id="App">
-      <h2>01</h2>
+      <h2>02</h2>
       <p>JSX Tutorial - 특징2: Single Root</p>
     </div>
   );
