@@ -19,4 +19,4 @@
     - 브라우저별 es6 호환성 테이블(https://kangax.github.io/compat-table/es6)
 
 5) 변환하기
-    $ npm babel src/index.js -o dist/index.js
+    $ npx babel src/index.js -o dist/index.js
