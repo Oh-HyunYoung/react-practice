@@ -1,4 +1,4 @@
-ex01: Propert(props)
+ex01: Property(props)
 1) 컴포넌트의 데이터
 2) 부모에서 자식으로 전달
     - 컴포넌트 간의 통신, Data Flow
