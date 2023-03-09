@@ -4,8 +4,8 @@ import KanbanBoard from './KanbanBoard';
 
 function App(props) {
     return (
-        <div id='App' className={'App'}>
-            <KanbanBoard/>
+        <div id='App' className={'App'}>            
+           <KanbanBoard />
         </div>
     );
 }

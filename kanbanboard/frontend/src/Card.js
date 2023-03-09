@@ -8,7 +8,7 @@ const Card = ({no, title, description, tasks}) => {
             <div className={styles.Card__Title}>{title}</div>
             <div className={styles.Card__Details}>
                 {description}
-            </div>
+            </div>  
             <TaskList tasks={tasks} />
         </div>
     );

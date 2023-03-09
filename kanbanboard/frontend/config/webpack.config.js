@@ -1,16 +1,16 @@
 const path = require('path');
 
-module.exports = function(env){ 
-    return{
+module.exports = function(env){
+    return {
         mode: "none",
         entry: path.resolve(`src/index.js`),
         output: {
             path: path.resolve('public'),
             filename: 'assets/js/main.js',
-            assetModuleFilename: 'assets/images/[hash][ext]'
+            assetModuleFilename:'assets/images/[hash][ext]'
         },
-        module:{
-            rules: [{
+        module: {
+            rules:[{
                 test: /\.js$/i,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
@@ -20,13 +20,13 @@ module.exports = function(env){
             },{
                 test: /\.(c|sa|sc)ss$/i,
                 use: [
-                    'style-loader', 
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
                             modules: true
                         }
-                    }, 
+                    },
                     'sass-loader']
             }, {
                 test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
@@ -39,7 +39,7 @@ module.exports = function(env){
             port: 9090,
             liveReload: true,
             compress: true,
-            hot: false
+            hot: false 
         }
     }
 }
