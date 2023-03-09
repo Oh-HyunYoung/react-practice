@@ -1,9 +1,14 @@
 import React from 'react';
+import './assets/css/App.css';
+import EmailList from './EmailList';
+import data from './assets/json/data.json';
+import RegisterForm from './RegisterForm';
 
 function App(props) {
     return (
         <div id='App'>
-             <h1>Emaillist</h1>
+             <RegisterForm/>
+             <EmailList data={data}/>
         </div>
     );
 }
