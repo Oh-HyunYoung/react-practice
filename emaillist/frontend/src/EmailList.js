@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './assets/css/Emaillist.css';
 import Email from './Email';
 
-const Emaillist = ({data}) => {
+const Emaillist = ({emails}) => {
     return (
         <ul className={styles.Emaillist}>
            {
-                data.map(email => <Email
+                emails.map(email => <Email
                                     key={email.no}
                                     no={email.no}
                                     firstName={email.firstName}

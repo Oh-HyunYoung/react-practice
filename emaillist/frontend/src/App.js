@@ -7,20 +7,17 @@ import Searchbar from './Searchbar';
 
 export default function App(props) {
     const [emails, setEmails] = useState(data);
-    const notifyKeyWordChanged = (e) => {
+    const notifyKeyWordChanged = (keyword) => {
         // keyword가 firstName or lastName or email
         //setEmails(e.target.value.toLowerCase())
-        const newEmails = emails.filter((keywordlist) => 
-            e.email.indexOf(keywordlist)
-        );
+        const emails = data.filter(e => e.firstName.indexOf(keyword) != -1 || e.lastName.indexOf(keyword) != -1 || e.email.indexOf(keyword) != -1);
         setEmails(emails);
     }
-
     return (
         <div id='App'>
              <RegisterForm/>
              <Searchbar callback={notifyKeyWordChanged}/>
-             <Emaillist data={data}/>
+             <Emaillist emails={emails}/>
              
         </div>
     );
