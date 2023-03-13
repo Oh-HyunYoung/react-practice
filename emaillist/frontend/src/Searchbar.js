@@ -3,7 +3,7 @@ import styles from './assets/css/Searchbar.css';
 
 const Searchbar = () => {
     return (
-        <div class='Searchbar'>
+        <div class={styles.Searchbar}>
             <input type='text' placeholder='찾기'/>
         </div>
     );
