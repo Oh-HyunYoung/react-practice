@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './assets/css/RegisterForm.css';
-import EmailList from './EmailList';
+import Emaillist from './Emaillist';
 
 
 const RegisterForm = ({}) => {

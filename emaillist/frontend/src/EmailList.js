@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './assets/css/EmailList.css';
+import styles from './assets/css/Emaillist.css';
 import Email from './Email';
 
-const EmailList = ({data}) => {
+const Emaillist = ({data}) => {
     return (
-        <ul className={styles.EmailList}>
+        <ul className={styles.Emaillist}>
            {
                 data.map(email => <Email
                                     key={email.no}
@@ -19,4 +19,4 @@ const EmailList = ({data}) => {
     );
 };
 
-export default EmailList;
+export default Emaillist;
