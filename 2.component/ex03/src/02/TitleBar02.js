@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 
 export default function TitelBar02() {
-    useState(0);
-    
+    const [no, setNo] = useState(0);
+
+    const onClickHandler = function() {
+        setNo(no + 1);
+        console.log(`TitleBar02 Clicked:${stateNo}`);
+    }
+
     return (
         <div>
-            <h1>Function Handler</h1>
+            <h1
+                onClick={onClickHandler}
+                style={{
+                    cursor:'pointer'
+                }}>
+                    Function Handler
+                <br/>
+                    {no}
+                </h1>
         </div>
     )
 }
