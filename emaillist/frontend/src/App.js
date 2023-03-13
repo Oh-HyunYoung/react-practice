@@ -5,21 +5,24 @@ import data from './assets/json/data.json';
 import RegisterForm from './RegisterForm';
 import Searchbar from './Searchbar';
 
-function App(props) {
+export default function App(props) {
     const [emails, setEmails] = useState(data);
-    const notifyKeyWordChanged = function() {
+    const notifyKeyWordChanged = (e) => {
         // keyword가 firstName or lastName or email
-        const newEmails = emails.filter(function(e) {return true})
+        //setEmails(e.target.value.toLowerCase())
+        const newEmails = emails.filter((keywordlist) => 
+            e.email.indexOf(keywordlist)
+        );
+        setEmails(emails);
     }
 
     return (
         <div id='App'>
              <RegisterForm/>
-             <Searchbar/>
+             <Searchbar callback={notifyKeyWordChanged}/>
              <Emaillist data={data}/>
              
         </div>
     );
 }
 
-export default App;
