@@ -8,12 +8,16 @@ export default function App() {
     return (
         <div>
             <span>{ticks}</span>
+        {
+            ticks % 10 == 0?
+            null : 
 
             <Clock
                 message={'ex05: useEffect Hook example'}
                 hours={state.hours}
                 minutes={state.minutes}
                 seconds={state.seconds}/>
+        }
         </div>
     );
 }
