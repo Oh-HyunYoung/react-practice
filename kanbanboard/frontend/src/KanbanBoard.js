@@ -10,6 +10,7 @@ const KanbanBoard = () => {
     const changeTaskDone = function(cardNo, taskNo, done) {
         const cardIndex = cards.findIndex(card => card.no === cardNo);
         const taskIndex = cards[cardIndex].tasks.findIndex(task => task.no === taskNo);        
+    
         const newCards = update(cards, {
             [cardIndex]: {
                 tasks: {
@@ -21,7 +22,7 @@ const KanbanBoard = () => {
                 }
             }
         });
-       
+        
         setCards(newCards);
     }
 
