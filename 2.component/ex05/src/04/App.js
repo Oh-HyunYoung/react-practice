@@ -3,20 +3,27 @@ import './assets/scss/App.scss'
 import Clock from './Clock';
 
 export default function App() {
-    const [ticks, setTick] = useState(0);
+    const [ticks, setTick] = useState(new Date());
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setTick(new Date());
+        }, 1000);
+        return(()=>clearInterval(id))
+    }, []);
 
     return (
         <div>
-            <span>{ticks}</span>
+            <span>{ticks.toLocaleTimeString()}</span>
         {
-            ticks % 10 == 0?
+            ticks.getSeconds() % 10 === 0?
             null : 
 
             <Clock
-                message={'ex05: useEffect Hook example'}
-                hours={state.hours}
-                minutes={state.minutes}
-                seconds={state.seconds}/>
+                message={'ex05: useEffect Hook example'} 
+                hours={ticks.getHours()}
+                minutes={ticks.getMinutes()}
+                seconds={ticks.getSeconds()}/>
         }
         </div>
     );
