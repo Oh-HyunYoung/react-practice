@@ -20,7 +20,7 @@ const Card = ({no, title, description}) => {
 
             if(!response.ok){
                 throw new Error(`${response.status} ${response.statusText}`)     //error 발생시 다 catch 로 넘겨줌
-             }
+            }
 
             const json = await response.json();
             if(json.result !== 'success'){
@@ -107,7 +107,7 @@ const Card = ({no, title, description}) => {
                                 console.log(err.message);
                             }
                         }
-                        setShowDetail(!showDetail)  //descroption...
+                        setShowDetail(!showDetail)  //description...
                  }}>
                         {title}
                     </div>
