@@ -23,6 +23,8 @@ ex02: Component Styling
     - $ npm run debug src=06 css-modules=true
 
 7) React Modal 
+    - 설치
+    $ npm i react-modal
 8) Modal: Material UI
 
 =======================================================
