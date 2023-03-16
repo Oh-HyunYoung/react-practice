@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import SiteLayout from "../layout/SiteLayout";
 import styles from '../assets/scss/component/Gallery.scss';
 
