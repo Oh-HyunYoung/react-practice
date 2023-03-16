@@ -70,6 +70,33 @@ export default function App(props) {
     
     }
 
+    const deleteEmails = async (non) => {
+        try {
+            const response = await fetch(`/api/delete/${no}`, {
+                method: 'delete',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            const deletelist = emails.filter((nos) => nos.no !== non);
+            setEmails(deletelist);
+        
+
+            if(!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+            if(json.result !== 'success'){
+                throw new Error(`${json.result} ${json.message}`)
+            }
+
+        } catch(err){
+            console.log(err.message);
+        }  
+    }
+
 
     const notifyKeyWordChanged = (keyword) => {
         // keyword가 firstName or lastName or email
@@ -80,7 +107,8 @@ export default function App(props) {
         <div id='App'>
              <RegisterForm callbackRegister={addRegister}/>
              <Searchbar callback={notifyKeyWordChanged}/>
-             <Emaillist emails={emails}/>
+             <Emaillist emails={emails}
+                        ondelete={deleteEmails}/>
             
              
         </div>
