@@ -29,7 +29,7 @@ export default function App() {
             </Modal>
 
 
-
+            
             {/* example modal02: Using onRequestClose */}
             <button onClick={ () => setModal02IsOpen(true) }>modal02</button>
             <br/><br/>
