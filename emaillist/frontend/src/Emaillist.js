@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './assets/css/Emaillist.css';
 import Email from './Email';
 
-const Emaillist = ({emails}) => {
+const Emaillist = ({emails, onDelete}) => {
     return (
         <ul className={styles.Emaillist}>
            {
@@ -12,6 +12,7 @@ const Emaillist = ({emails}) => {
                                     firstName={email.firstName}
                                     lastName={email.lastName}
                                     email={email.email}
+                                    onDelete={onDelete}
                                     />)
             }
 

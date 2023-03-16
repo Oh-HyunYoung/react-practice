@@ -17,6 +17,11 @@ public class EmaillistRepository {
       return sqlSession.selectList("emaillist.findAll");
    }
 
+   public List<EmaillistVo> SearchAll(String keyword) {
+	      return sqlSession.selectList("emaillist.SearchAll", keyword);
+	   }
+
+   
    public void insert(EmaillistVo vo) {
        sqlSession.insert("emaillist.insert", vo);
    }

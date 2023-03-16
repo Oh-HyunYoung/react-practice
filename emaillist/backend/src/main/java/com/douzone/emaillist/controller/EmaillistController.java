@@ -29,6 +29,14 @@ public class EmaillistController {
       
    }
    
+   @GetMapping("/email/{keyword}")
+   public ResponseEntity<JsonResult> searchlist(@PathVariable("keyword") String keyword) {
+      return ResponseEntity
+            .status(HttpStatus.OK)
+            .body(JsonResult.success(emaillistRepository.SearchAll(keyword)));
+      
+   }
+   
    @PostMapping("/email")
    public ResponseEntity<JsonResult> createmail(@RequestBody EmaillistVo vo) {
       emaillistRepository.insert(vo);

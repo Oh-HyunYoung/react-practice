@@ -70,7 +70,7 @@ export default function App(props) {
     
     }
 
-    const deleteEmails = async (non) => {
+    const deleteEmails = async (no) => {
         try {
             const response = await fetch(`/api/delete/${no}`, {
                 method: 'delete',
@@ -78,10 +78,6 @@ export default function App(props) {
                     'Accept': 'application/json'
                 }
             });
-
-            const deletelist = emails.filter((nos) => nos.no !== non);
-            setEmails(deletelist);
-        
 
             if(!response.ok) {
                 throw new Error(`${response.status} ${response.statusText}`);
@@ -92,23 +88,45 @@ export default function App(props) {
                 throw new Error(`${json.result} ${json.message}`)
             }
 
+            const deletelist = emails.filter((nos) => nos.no !== no);
+            setEmails(deletelist);
+
         } catch(err){
             console.log(err.message);
         }  
     }
 
 
-    const notifyKeyWordChanged = (keyword) => {
-        // keyword가 firstName or lastName or email
-        const emails = data.filter(e => e.firstName.indexOf(keyword) != -1 || e.lastName.indexOf(keyword) != -1 || e.email.indexOf(keyword) != -1);
-        setEmails(emails);
+    const notifyKeyWordChanged  = async (keyword) => {
+        try {
+            const response = await fetch(`/api/email/${keyword}`, {
+                method: 'get',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if(!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+            if(json.result !== 'success'){
+                throw new Error(`${json.result} ${json.message}`)
+            }
+
+            setEmails(json.data);
+        } catch(err){
+            console.log(err.message);
+        }  
     }
+
     return (
         <div id='App'>
              <RegisterForm callbackRegister={addRegister}/>
              <Searchbar callback={notifyKeyWordChanged}/>
              <Emaillist emails={emails}
-                        ondelete={deleteEmails}/>
+                        onDelete={deleteEmails}/>
             
              
         </div>
