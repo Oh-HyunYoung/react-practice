@@ -10,7 +10,7 @@ export default function App(props) {
 
     const fetchEmails = async () => {
         try {
-            const response = await fetch('/api/read', {
+            const response = await fetch('/api/email', {
                 method: 'get',
                 headers: {
                     'Accept': 'application/json'
@@ -45,7 +45,7 @@ export default function App(props) {
         };
         
         try{
-            const response = await fetch('/api/task', {
+            const response = await fetch('/api/email', {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json',

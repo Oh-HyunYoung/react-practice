@@ -4,13 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
+@Getter
 @ToString
 public class EmaillistVo {
-	private Long no;
-	private String firstName;
-	private String lastName;
-	private String email;
-	
+   private Long no;
+   private String firstname;
+   private String lastname;
+   private String email;
+   
 }
