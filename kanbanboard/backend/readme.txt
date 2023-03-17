@@ -6,7 +6,7 @@
 		# mvn -f kanbanboard/backend exec:exec clean package
 
 	테스트
-		# java -Dspring.profiles.active=production -jar kanbanboard/backend/target/kanbanboard.jar
+	# java -Dspring.profiles.active=production -jar kanbanboard/backend/target/kanbanboard.jar
 
 
 =====================================================
