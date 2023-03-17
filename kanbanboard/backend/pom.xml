@@ -98,6 +98,7 @@
 						<argument>run</argument>
 						<argument>build</argument>
 					</arguments>
+					<environmentVariables></environmentVariables>
 				</configuration>
 			</plugin>
 		</plugins>
