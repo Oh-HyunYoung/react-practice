@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './assets/css/App.css';
 import Emaillist from './Emaillist';
-import data from './assets/json/data.json';
 import RegisterForm from './RegisterForm';
 import Searchbar from './Searchbar';
 

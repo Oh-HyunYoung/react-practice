@@ -1,7 +1,5 @@
 import React,{useState} from 'react';
 import styles from './assets/css/RegisterForm.css';
-import Emaillist from './Emaillist';
-
 
 const RegisterForm = ({no, callbackRegister}) => {
 
