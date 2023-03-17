@@ -90,7 +90,7 @@
 							<goal>exec</goal>
 						</goals>
 					</execution>
-				</executions>	
+				</executions>
 				<configuration>
 					<executable>npm</executable>
 					<workingDirectory>../frontend</workingDirectory>
