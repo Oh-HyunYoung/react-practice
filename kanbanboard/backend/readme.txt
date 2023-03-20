@@ -55,7 +55,7 @@
 	3) npm 스크립팅
 	"scripts": {
 	    "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development --env",
-	    "build": "npx webpack --config config/webpack.config.js --mode production"
+	    "build": "npm i && npx webpack --config config/webpack.config.js --mode production"
   	}
   	
   	4) 테스트(개발 모드)
