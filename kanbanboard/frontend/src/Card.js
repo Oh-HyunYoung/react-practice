@@ -34,8 +34,8 @@ const Card = ({no, title, description}) => {
                     }
                 }
             });
-
             setTasks(newTasks);
+            
         }catch(err){
             console.log(err.message);
         }
